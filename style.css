@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('background_profile.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+}
+header {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+header h1 { margin:0; font-size:1.4em; }
+header h2 { margin: 10px 0; font-size:1.1em; }
+
+ul { list-style: none; padding: 0; }
+ul li { margin: 5px 0; }
+
+.content section {
+  background: rgba(0,0,0,0.5);
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  background: #444;
+  padding: 10px;
+}
+.dropdown-content a {
+  color: #0ff;
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+}
