@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Social Media Button -->
+<button onclick="toggleSocialLinks()" style="margin-top:10px; padding:10px; background-color:#444; color:white; border:none; border-radius:5px;">
+  <i class="fas fa-share-alt"></i> Social Media
+</button>
+
+<!-- Social Media Icons -->
+<div id="socialLinks" style="display:none; margin-top:15px;">
+  <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" target="_blank" style="color:#25D366; display:block; margin:8px;">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=100090584677493" target="_blank" style="color:#1877F2; display:block; margin:8px;">
+    <i class="fab fa-facebook"></i> Facebook Profile 1
+  </a>
+  <a href="https://www.facebook.com/jayden.enoch.98" target="_blank" style="color:#1877F2; display:block; margin:8px;">
+    <i class="fab fa-facebook"></i> Facebook Profile 2
+  </a>
+  <a href="https://www.instagram.com/cupid_arika?igsh=bXJxbWp1enY1N3Jz" target="_blank" style="color:#E4405F; display:block; margin:8px;">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+  <a href="https://x.com/EnockMamboleo?t=jcGCUuYWSbI7Q_pZ9_dm5Q&s=09" target="_blank" style="color:#000000; display:block; margin:8px;">
+    <i class="fab fa-x-twitter"></i> Twitter (X)
+  </a>
+  <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" target="_blank" style="color:#0A66C2; display:block; margin:8px;">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="mailto:mamboleoenock@gmail.com" style="color:#EA4335; display:block; margin:8px;">
+    <i class="fas fa-envelope"></i> Email Me
+  </a>
+</div>
+
+<!-- Toggle Script -->
+<script>
+  function toggleSocialLinks() {
+    const links = document.getElementById("socialLinks");
+    links.style.display = links.style.display === "none" ? "block" : "none";
+  }
+</script>
