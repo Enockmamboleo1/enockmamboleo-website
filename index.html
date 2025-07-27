@@ -1,153 +1,153 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enock Mamboleo | AGED & IT Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enock Mamboleo - AGED & IT</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('background_profile.jpg') no-repeat center center/cover;
       color: white;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
       text-align: center;
-    }header {
-  padding: 2em 1em;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-h1 {
-  font-size: 1.8em;
-}
-
-.core-services {
-  text-decoration: underline;
-  margin-top: 1em;
-}
-
-.services-list {
-  margin: 1em 0;
-}
-
-.hamburger {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1.8em;
-  cursor: pointer;
-}
-
-.menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: #222;
-  padding: 1em;
-  border-radius: 10px;
-  text-align: left;
-}
-
-.menu section {
-  margin-bottom: 1em;
-}
-
-.gallery img {
-  width: 80px;
-  margin: 5px;
-  border-radius: 8px;
-}
-
-.cv-section {
-  margin: 2em auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1em;
-  width: 80%;
-  border-radius: 10px;
-}
-
-.comment-section,
-.dm-section {
-  margin: 2em;
-}
-
-.social-toggle {
-  background: #444;
-  color: white;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.social-icons {
-  margin-top: 1em;
-  display: none;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  font-size: 1.5em;
-  color: white;
-}
-
-.social-icons a:hover {
-  opacity: 0.7;
-}
-
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .menu-button {
+      background: white;
+      color: black;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .dropdown.show {
+      display: block;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .gallery img {
+      width: 100px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+    .social-icons {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .social-icons.show {
+      display: block;
+    }
+    .icon {
+      display: inline-block;
+      margin: 10px;
+      font-size: 24px;
+      text-decoration: none;
+      color: white;
+    }
+    .whatsapp { color: #25D366; }
+    .facebook { color: #3b5998; }
+    .instagram { color: #E4405F; }
+    .twitter { color: #1DA1F2; }
+    .linkedin { color: #0077B5; }
+    .email { color: #DD4B39; }
+    button.toggle-social {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
   </style>
-</head><body>
+</head>
+<body>
   <header>
     <h1>MAMBOLEO advanced AGED and IT solutions for your business</h1>
-    <h2 class="core-services">Core Services</h2>
-    <div class="services-list">
-      <p>Precision Agriculture</p>
-      <p>Sustainable Farm Management</p>
-      <p>Agri-Tech Solutions</p>
-      <p>Agri-Bio Education</p>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-    <div class="menu" id="dropdownMenu">
-      <section>
-        <strong>Name:</strong> Enock Mamboleo<br>
-        <strong>Title:</strong> AGRICULTURE EXTENSION OFFICER, BIO AGRIC and COMPUTER TEACHER, and Sub-IT Specialist<br>
-        <strong>Bio:</strong> A passionate and goal-driven individual with a strong background in AGED and IT tasks. Dedicated, adaptable, and always ready to take on new challenges that create a positive impact.<br>
-        <strong>Phone:</strong> 0701658740
-      </section>
-      <section class="gallery">
-        <strong>Photo Gallery</strong><br>
-        <img src="img1.jpg" alt="Gallery Image">
-        <img src="img2.jpg" alt="Gallery Image">
-      </section>
-    </div>
-  </header>  <div class="cv-section">
-    <h3>My CV</h3>
-    <p>To be uploaded soon.</p>
-  </div>  <div class="comment-section">
-    <h3>Public Comments</h3>
-    <p>Coming soon...</p>
-  </div><button class="social-toggle" onclick="toggleSocial()">Show Social Media</button>
+    <h2>Core Services</h2>
+    <p style="text-align:center">Precision Agriculture, Sustainable Farm Management, Agri-Tech Solutions, Agri-Bio Education</p>
+  </header>  <nav>
+    <button class="menu-button" onclick="toggleDropdown()">☰</button>
+    <div id="dropdown" class="dropdown">
+      <h3>My Profile</h3>
+      <img src="profile.jpg" alt="Profile" width="100" style="border-radius:50%" />
+      <p><strong>Name:</strong> Enock Mamboleo</p>
+      <p><strong>Title:</strong> AGRICULTURE EXTENSION OFFICER, BIO AGRIC and COMPUTER TEACHER AND sub-IT specialist</p>
+      <p><strong>Bio:</strong> a passionate and goal driven individual with strong background in AGED and IT tasks. Dedicated, adaptable and always ready to take new challenges that create positive impact.</p>
+      <p><strong>Contact:</strong> 0701658740</p><div class="gallery">
+    <h3>Gallery</h3>
+    <img src="img1.jpg" alt="Gallery Image 1">
+    <img src="img2.jpg" alt="Gallery Image 2">
+    <!-- Add more images by uploading to GitHub -->
+  </div>
+</div>
 
-  <div class="social-icons" id="socialIcons">
-    <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" target="_blank" style="color:#25D366"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=100090584677493" target="_blank" style="color:#1877F2"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.facebook.com/jayden.enoch.98" target="_blank" style="color:#1877F2"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/cupid_arika?igsh=bXJxbWp1enY1N3Jz" target="_blank" style="color:#E4405F"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/EnockMamboleo?t=jcGCUuYWSbI7Q_pZ9_dm5Q&s=09" target="_blank" style="color:#1DA1F2"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" target="_blank" style="color:#0077B5"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:mamboleoenock@gmail.com" style="color:#D44638"><i class="fas fa-envelope"></i></a>
-  </div>  <div class="dm-section">
-    <h3>Private Message (DM)</h3>
-    <p>Coming soon...</p>
+  </nav>  <div class="card">
+    <h3>CV Section</h3>
+    <p><em>To be uploaded soon</em></p>
+  </div>  <div class="card">
+    <h3>Public Comment Section</h3>
+    <form>
+      <label for="comment">Your Comment:</label><br />
+      <textarea id="comment" rows="4" cols="50" placeholder="Type your comment here..."></textarea><br />
+      <button type="submit">Post Comment</button>
+    </form>
+    <div id="comments-display">
+      <!-- Comments will appear here -->
+    </div>
+  </div><button class="toggle-social" onclick="toggleSocial()">Show Social Media</button>
+
+  <div class="social-icons" id="social-icons">
+    <a class="icon whatsapp" href="https://wa.me/qr/K4ZHZCB4Z4FIL1">WhatsApp</a>
+    <a class="icon facebook" href="https://www.facebook.com/profile.php?id=100090584677493">Facebook 1</a>
+    <a class="icon facebook" href="https://www.facebook.com/jayden.enoch.98">Facebook 2</a>
+    <a class="icon instagram" href="https://www.instagram.com/cupid_arika?igsh=bXJxbWp1enY1N3Jz">Instagram</a>
+    <a class="icon twitter" href="https://x.com/EnockMamboleo?t=jcGCUuYWSbI7Q_pZ9_dm5Q&s=09">Twitter (X)</a>
+    <a class="icon linkedin" href="https://www.linkedin.com/in/enock-mamboleo-bb8815372">LinkedIn</a>
+    <a class="icon email" href="mailto:mamboleoenock@gmail.com">Email</a>
+  </div>  <div class="card">
+    <h3>Private DM to Admin</h3>
+    <form>
+      <input type="email" placeholder="Your Email" required /><br /><br />
+      <textarea rows="4" placeholder="Write your message..."></textarea><br /><br />
+      <button type="submit">Send DM</button>
+    </form>
   </div>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    function toggleDropdown() {
+      document.getElementById('dropdown').classList.toggle('show');
     }
-
     function toggleSocial() {
-      const icons = document.getElementById('socialIcons');
-      icons.style.display = (icons.style.display === 'block') ? 'none' : 'block';
+      document.getElementById('social-icons').classList.toggle('show');
     }
-  </script></body></html>
+  </script></body>
+</html>
