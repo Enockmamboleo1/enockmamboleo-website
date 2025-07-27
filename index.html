@@ -5,54 +5,52 @@
   <title>Enock Mamboleo - AGED & IT Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="module">
-    // Firebase import and config
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";const firebaseConfig = {
-  apiKey: "AIzaSyDXthPCzrLIsgLWE_W-LzowuLQpDJUyLxM",
-  authDomain: "mamboleositecoments-54741.firebaseapp.com",
-  projectId: "mamboleositecoments-54741",
-  storageBucket: "mamboleositecoments-54741.firebasestorage.app",
-  messagingSenderId: "897832284361",
-  appId: "1:897832284361:web:45a0d1f7eab99a66415d18"
-};
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDXthPCzrLIsgLWE_W-LzowuLQpDJUyLxM",
+      authDomain: "mamboleositecoments-54741.firebaseapp.com",
+      projectId: "mamboleositecoments-54741",
+      storageBucket: "mamboleositecoments-54741.firebasestorage.app",
+      messagingSenderId: "897832284361",
+      appId: "1:897832284361:web:45a0d1f7eab99a66415d18"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+    async function loadComments() {
+      const commentList = document.getElementById("comment-list");
+      commentList.innerHTML = "<p>Loading comments...</p>";
+      const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
+      commentList.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const comment = document.createElement("div");
+        comment.innerHTML = `<p><strong>${data.name}:</strong> ${data.message}</p>`;
+        commentList.appendChild(comment);
+      });
+    }
 
-async function loadComments() {
-  const commentList = document.getElementById("comment-list");
-  commentList.innerHTML = "<p>Loading comments...</p>";
-  const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
-  const querySnapshot = await getDocs(q);
-  commentList.innerHTML = "";
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-    const comment = document.createElement("div");
-    comment.innerHTML = `<p><strong>${data.name}:</strong> ${data.message}</p>`;
-    commentList.appendChild(comment);
-  });
-}
+    async function submitComment(e) {
+      e.preventDefault();
+      const name = document.getElementById("comment-name").value;
+      const message = document.getElementById("comment-message").value;
+      if (name && message) {
+        await addDoc(collection(db, "comments"), {
+          name,
+          message,
+          timestamp: serverTimestamp()
+        });
+        document.getElementById("comment-form").reset();
+        loadComments();
+      }
+    }
 
-async function submitComment(e) {
-  e.preventDefault();
-  const name = document.getElementById("comment-name").value;
-  const message = document.getElementById("comment-message").value;
-  if (name && message) {
-    await addDoc(collection(db, "comments"), {
-      name,
-      message,
-      timestamp: serverTimestamp()
+    window.addEventListener("DOMContentLoaded", () => {
+      loadComments();
+      document.getElementById("comment-form").addEventListener("submit", submitComment);
     });
-    document.getElementById("comment-form").reset();
-    loadComments();
-  }
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  loadComments();
-  document.getElementById("comment-form").addEventListener("submit", submitComment);
-});
-
   </script>
   <style>
     body {
@@ -67,17 +65,9 @@ window.addEventListener("DOMContentLoaded", () => {
       padding: 1rem;
       text-align: center;
     }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    h2 {
-      text-decoration: underline;
-    }
-    .core-services {
-      text-align: center;
-      margin-top: 2rem;
-    }
+    h1 { margin: 0; font-size: 2rem; }
+    h2 { text-decoration: underline; }
+    .core-services { text-align: center; margin-top: 2rem; }
     .section {
       background-color: rgba(0, 0, 0, 0.5);
       margin: 2rem;
@@ -100,9 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
       padding: 1rem;
       border-radius: 10px;
     }
-    .menu.show {
-      display: block;
-    }
+    .menu.show { display: block; }
     .social-icons {
       display: none;
       text-align: center;
@@ -119,9 +107,7 @@ window.addEventListener("DOMContentLoaded", () => {
       padding: 0.5rem;
       border-radius: 50%;
     }
-    .social-icons a:hover {
-      opacity: 0.7;
-    }
+    .social-icons a:hover { opacity: 0.7; }
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -157,10 +143,12 @@ window.addEventListener("DOMContentLoaded", () => {
     <h1>MAMBOLEO advanced AGED and IT solutions for your business</h1>
     <h2>Core Services</h2>
     <p>Precision Agriculture, Sustainable Farm Management, Agri-Tech Solutions, and Agri-Bio Education</p>
-  </header>  <div class="section">
+  </header>
+  <div class="section">
     <h3>Curriculum Vitae (CV)</h3>
     <p>To be uploaded soon.</p>
-  </div>  <div class="section">
+  </div>
+  <div class="section">
     <h3>Public Comments</h3>
     <form id="comment-form">
       <input type="text" id="comment-name" placeholder="Your Name" required><br>
@@ -168,15 +156,17 @@ window.addEventListener("DOMContentLoaded", () => {
       <button type="submit">Post Comment</button>
     </form>
     <div id="comment-list"></div>
-  </div>  <div class="section">
+  </div>
+  <div class="section">
     <h3>Private Message to Admin – Encrypted</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required><br>
-      <input type="email" placeholder="Your Email" required><br>
-      <textarea placeholder="Enter your message"></textarea><br>
+    <form id="dm-form">
+      <input type="text" id="dm-name" placeholder="Your Name" required><br>
+      <input type="email" id="dm-email" placeholder="Your Email" required><br>
+      <textarea id="dm-message" placeholder="Enter your message" required></textarea><br>
       <button type="submit">Send DM</button>
     </form>
-  </div>  <div class="section">
+  </div>
+  <div class="section">
     <button onclick="toggleSocial()">Show Social Media</button>
     <div class="social-icons" id="social">
       <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
@@ -187,7 +177,8 @@ window.addEventListener("DOMContentLoaded", () => {
       <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" style="background-color: #0077b5;"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:mamboleoenock@gmail.com" style="background-color: #D44638;"><i class="fas fa-envelope"></i></a>
     </div>
-  </div>  <div class="menu" id="menu">
+  </div>
+  <div class="menu" id="menu">
     <div class="section">
       <h3>My Profile</h3>
       <img src="background_profile.jpg" alt="Profile Picture" style="width:100px;height:100px;border-radius:50%;">
@@ -204,7 +195,8 @@ window.addEventListener("DOMContentLoaded", () => {
         <img src="photo3.jpg" alt="">
       </div>
     </div>
-  </div>  <script>
+  </div>
+  <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('show');
@@ -213,5 +205,21 @@ window.addEventListener("DOMContentLoaded", () => {
       const social = document.getElementById('social');
       social.classList.toggle('show');
     }
-  </script></body>
+
+    // ✅ DM to WhatsApp script
+    document.getElementById("dm-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("dm-name").value.trim();
+      const email = document.getElementById("dm-email").value.trim();
+      const message = document.getElementById("dm-message").value.trim();
+      if (name && email && message) {
+        const fullMessage = `Hello Enock, you have a new DM!\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        const encodedMessage = encodeURIComponent(fullMessage);
+        const whatsappURL = `https://wa.me/254701658740?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+        this.reset();
+      }
+    });
+  </script>
+</body>
 </html>
