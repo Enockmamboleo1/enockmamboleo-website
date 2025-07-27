@@ -4,6 +4,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enock Mamboleo - AGED & IT Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="module">
+    // Firebase import and config
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";const firebaseConfig = {
+  apiKey: "AIzaSyDXthPCzrLIsgLWE_W-LzowuLQpDJUyLxM",
+  authDomain: "mamboleositecoments-54741.firebaseapp.com",
+  projectId: "mamboleositecoments-54741",
+  storageBucket: "mamboleositecoments-54741.firebasestorage.app",
+  messagingSenderId: "897832284361",
+  appId: "1:897832284361:web:45a0d1f7eab99a66415d18"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadComments() {
+  const commentList = document.getElementById("comment-list");
+  commentList.innerHTML = "<p>Loading comments...</p>";
+  const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+  const querySnapshot = await getDocs(q);
+  commentList.innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    const comment = document.createElement("div");
+    comment.innerHTML = `<p><strong>${data.name}:</strong> ${data.message}</p>`;
+    commentList.appendChild(comment);
+  });
+}
+
+async function submitComment(e) {
+  e.preventDefault();
+  const name = document.getElementById("comment-name").value;
+  const message = document.getElementById("comment-message").value;
+  if (name && message) {
+    await addDoc(collection(db, "comments"), {
+      name,
+      message,
+      timestamp: serverTimestamp()
+    });
+    document.getElementById("comment-form").reset();
+    loadComments();
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  loadComments();
+  document.getElementById("comment-form").addEventListener("submit", submitComment);
+});
+
+  </script>
   <style>
     body {
       margin: 0;
@@ -92,6 +142,13 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    input, textarea {
+      width: 95%;
+      margin: 0.2rem 0;
+      padding: 0.3rem;
+      border-radius: 5px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -104,8 +161,13 @@
     <h3>Curriculum Vitae (CV)</h3>
     <p>To be uploaded soon.</p>
   </div>  <div class="section">
-    <h3>Comment Section</h3>
-    <p>(Comments will be visible here. Backend integration pending.)</p>
+    <h3>Public Comments</h3>
+    <form id="comment-form">
+      <input type="text" id="comment-name" placeholder="Your Name" required><br>
+      <textarea id="comment-message" placeholder="Enter your comment" required></textarea><br>
+      <button type="submit">Post Comment</button>
+    </form>
+    <div id="comment-list"></div>
   </div>  <div class="section">
     <h3>Private Message to Admin – Encrypted</h3>
     <form>
