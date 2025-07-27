@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enock Mamboleo | AGED & IT Solutions</title>
@@ -13,95 +10,92 @@
       background: url('background_profile.jpg') no-repeat center center/cover;
       color: white;
       text-align: center;
-    }
+    }header {
+  padding: 2em 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
-    header {
-      padding: 2em 1em;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+h1 {
+  font-size: 1.8em;
+}
 
-    h1 {
-      font-size: 1.8em;
-    }
+.core-services {
+  text-decoration: underline;
+  margin-top: 1em;
+}
 
-    .core-services {
-      text-decoration: underline;
-      margin-top: 1em;
-    }
+.services-list {
+  margin: 1em 0;
+}
 
-    .services-list {
-      margin: 1em 0;
-    }
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.8em;
+  cursor: pointer;
+}
 
-    .hamburger {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.8em;
-      cursor: pointer;
-    }
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #222;
+  padding: 1em;
+  border-radius: 10px;
+  text-align: left;
+}
 
-    .menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: #222;
-      padding: 1em;
-      border-radius: 10px;
-      text-align: left;
-    }
+.menu section {
+  margin-bottom: 1em;
+}
 
-    .menu section {
-      margin-bottom: 1em;
-    }
+.gallery img {
+  width: 80px;
+  margin: 5px;
+  border-radius: 8px;
+}
 
-    .gallery img {
-      width: 80px;
-      margin: 5px;
-      border-radius: 8px;
-    }
+.cv-section {
+  margin: 2em auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  width: 80%;
+  border-radius: 10px;
+}
 
-    .cv-section {
-      margin: 2em auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 1em;
-      width: 80%;
-      border-radius: 10px;
-    }
+.comment-section,
+.dm-section {
+  margin: 2em;
+}
 
-    .comment-section,
-    .dm-section {
-      margin: 2em;
-    }
+.social-toggle {
+  background: #444;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .social-toggle {
-      background: #444;
-      color: white;
-      padding: 0.5em 1em;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.social-icons {
+  margin-top: 1em;
+  display: none;
+}
 
-    .social-icons {
-      margin-top: 1em;
-      display: none;
-    }
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: white;
+}
 
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 1.5em;
-      color: white;
-    }
+.social-icons a:hover {
+  opacity: 0.7;
+}
 
-    .social-icons a:hover {
-      opacity: 0.7;
-    }
   </style>
-</head>
-
-<body>
+</head><body>
   <header>
     <h1>MAMBOLEO advanced AGED and IT solutions for your business</h1>
     <h2 class="core-services">Core Services</h2>
@@ -127,19 +121,14 @@
         <img src="img2.jpg" alt="Gallery Image">
       </section>
     </div>
-  </header>
-
-  <div class="cv-section">
+  </header>  <div class="cv-section">
     <h3>My CV</h3>
     <p>To be uploaded soon.</p>
-  </div>
-
-  <div class="comment-section">
+  </div>  <div class="comment-section">
     <h3>Public Comments</h3>
     <p>Coming soon...</p>
-  </div>
+  </div><button class="social-toggle" onclick="toggleSocial()">Show Social Media</button>
 
-  <button class="social-toggle" onclick="toggleSocial()">Show Social Media</button>
   <div class="social-icons" id="socialIcons">
     <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" target="_blank" style="color:#25D366"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.facebook.com/profile.php?id=100090584677493" target="_blank" style="color:#1877F2"><i class="fab fa-facebook"></i></a>
@@ -148,14 +137,10 @@
     <a href="https://x.com/EnockMamboleo?t=jcGCUuYWSbI7Q_pZ9_dm5Q&s=09" target="_blank" style="color:#1DA1F2"><i class="fab fa-twitter"></i></a>
     <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" target="_blank" style="color:#0077B5"><i class="fab fa-linkedin"></i></a>
     <a href="mailto:mamboleoenock@gmail.com" style="color:#D44638"><i class="fas fa-envelope"></i></a>
-  </div>
-
-  <div class="dm-section">
+  </div>  <div class="dm-section">
     <h3>Private Message (DM)</h3>
     <p>Coming soon...</p>
-  </div>
-
-  <script>
+  </div>  <script>
     function toggleMenu() {
       const menu = document.getElementById('dropdownMenu');
       menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
@@ -165,7 +150,4 @@
       const icons = document.getElementById('socialIcons');
       icons.style.display = (icons.style.display === 'block') ? 'none' : 'block';
     }
-  </script>
-</body>
-
-</html>
+  </script></body></html>
