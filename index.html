@@ -1,90 +1,155 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enock Mamboleo | AGED & IT Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enock Mamboleo - AGED & IT Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('background_profile.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
-      text-align: center;
+      color: white;
     }
     header {
-      padding: 2rem 1rem;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
     }
     h1 {
+      margin: 0;
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
     h2 {
       text-decoration: underline;
-      margin-top: 1.5rem;
     }
     .core-services {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
+      text-align: center;
+      margin-top: 2rem;
     }
-    .core-services li {
-      margin: 0.5rem 0;
+    .section {
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 2rem;
+      padding: 1rem;
+      border-radius: 10px;
     }
-    #socialToggleBtn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
+    .hamburger {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
       cursor: pointer;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .menu.show {
+      display: block;
     }
     .social-icons {
       display: none;
+      text-align: center;
       margin-top: 1rem;
     }
+    .social-icons.show {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
     .social-icons a {
-      margin: 0 0.5rem;
       font-size: 1.5rem;
       color: white;
-      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 50%;
     }
     .social-icons a:hover {
-      opacity: 0.8;
+      opacity: 0.7;
     }
-    .whatsapp { color: #25D366; }
-    .facebook { color: #1877F2; }
-    .instagram { color: #E1306C; }
-    .twitter { color: #1DA1F2; }
-    .linkedin { color: #0A66C2; }
-    .email { color: #FFA500; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
-</head><body>
+</head>
+<body>
   <header>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <h1>MAMBOLEO advanced AGED and IT solutions for your business</h1>
     <h2>Core Services</h2>
-    <ul class="core-services">
-      <li>Precision Agriculture</li>
-      <li>Sustainable Farm Management</li>
-      <li>Agri-Tech Solutions</li>
-      <li>Agri-Bio Education</li>
-    </ul>
-  </header>  <!-- Comment section placeholder -->  <section id="comments">
-    <h2>Public Comments</h2>
-    <p>Comment section coming soon...</p>
-  </section>  <!-- Social media toggle button --><button id="socialToggleBtn">Show Social Media</button>
-
-  <!-- Social Media Icons -->  <div class="social-icons" id="socialIcons">
-    <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=100090584677493" class="facebook" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.facebook.com/jayden.enoch.98" class="facebook" target="_blank" title="Facebook 2"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/cupid_arika?igsh=bXJxbWp1enY1N3Jz" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/EnockMamboleo?t=jcGCUuYWSbI7Q_pZ9_dm5Q&s=09" class="twitter" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:mamboleoenock@gmail.com" class="email" title="Email"><i class="fas fa-envelope"></i></a>
+    <p>Precision Agriculture, Sustainable Farm Management, Agri-Tech Solutions, and Agri-Bio Education</p>
+  </header>  <div class="section">
+    <h3>Curriculum Vitae (CV)</h3>
+    <p>To be uploaded soon.</p>
+  </div>  <div class="section">
+    <h3>Comment Section</h3>
+    <p>(Comments will be visible here. Backend integration pending.)</p>
+  </div>  <div class="section">
+    <h3>Private Message to Admin – Encrypted</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Enter your message"></textarea><br>
+      <button type="submit">Send DM</button>
+    </form>
+  </div>  <div class="section">
+    <button onclick="toggleSocial()">Show Social Media</button>
+    <div class="social-icons" id="social">
+      <a href="https://wa.me/qr/K4ZHZCB4Z4FIL1" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100090584677493" style="background-color: #3b5998;"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.facebook.com/jayden.enoch.98" style="background-color: #3b5998;"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/cupid_arika" style="background-color: #E4405F;"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/EnockMamboleo" style="background-color: #000000;"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/enock-mamboleo-bb8815372" style="background-color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:mamboleoenock@gmail.com" style="background-color: #D44638;"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>  <div class="menu" id="menu">
+    <div class="section">
+      <h3>My Profile</h3>
+      <img src="background_profile.jpg" alt="Profile Picture" style="width:100px;height:100px;border-radius:50%;">
+      <p><strong>Name:</strong> Enock Mamboleo</p>
+      <p><strong>Professional Title:</strong> AGRICULTURE EXTENSION OFFICER, BIO AGRIC and COMPUTER TEACHER AND sub-IT specialist</p>
+      <p><strong>Bio:</strong> a passionate and goal driven individual with strong background in AGED and IT tasks. Dedicated, adaptable and always ready to take new challenges that create positive impact.</p>
+      <p><strong>Contact:</strong> 0701658740</p>
+    </div>
+    <div class="section">
+      <h3>Gallery</h3>
+      <div class="gallery">
+        <img src="photo1.jpg" alt="">
+        <img src="photo2.jpg" alt="">
+        <img src="photo3.jpg" alt="">
+      </div>
+    </div>
   </div>  <script>
-    const toggleBtn = document.getElementById('socialToggleBtn');
-    const iconsDiv = document.getElementById('socialIcons');
-    toggleBtn.addEventListener('click', () => {
-      iconsDiv.style.display = iconsDiv.style.display === 'none' ? 'block' : 'none';
-    });
-  </script></body></html>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+    function toggleSocial() {
+      const social = document.getElementById('social');
+      social.classList.toggle('show');
+    }
+  </script></body>
+</html>
